@@ -3,6 +3,7 @@
 	<name>XBMC Remote</name>
 	<comment></comment>
 	<projects>
+		<project>jsonrpclib</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

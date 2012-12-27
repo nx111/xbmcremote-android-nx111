@@ -290,6 +290,8 @@ public class ControlManager extends AbstractManager implements IControlManager {
 						}
 					}
 					String[] path = item.file.replaceAll("\\\\", "/").split("/");
+					if (path.length<2)
+						return "";
 					return path[path.length - 2];
 				}
 
