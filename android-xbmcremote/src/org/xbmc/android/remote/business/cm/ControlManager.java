@@ -164,7 +164,7 @@ public class ControlManager extends AbstractManager implements IControlManager {
 						GetActivePlayersResult result = results.get(results.size() - 1);
 						final int playerid = result.playerid;
 						callRaw(new Player.GetProperties(playerid, "time",
-								"speed", "position", "percentage"),
+								"speed", "position","totaltime", "percentage"),
 								new ApiHandler<Boolean, PlayerModel.PropertyValue>() {
 									@Override
 									public Boolean handleResponse(
@@ -251,7 +251,7 @@ public class ControlManager extends AbstractManager implements IControlManager {
 				}
 
 				public int getDuration() {
-					return item.runtime;
+					return parseTime(propertyValue.totaltime);
 				}
 
 				public String getArtist() {

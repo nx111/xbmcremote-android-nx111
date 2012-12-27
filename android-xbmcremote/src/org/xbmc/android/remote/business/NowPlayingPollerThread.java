@@ -156,7 +156,7 @@ public class NowPlayingPollerThread extends Thread {
 	private boolean updateNowPlayingCover(ICurrentlyPlaying currPlaying) {
 		try {
 			String downloadURI = currPlaying.getThumbnail();
-			if (downloadURI == null || downloadURI.length() == 0) {
+			if (downloadURI == null || downloadURI.length() == 0 || HostFactory.host == null) {
 				mCover = null;
 				String oldCoverPath = mCoverPath;
 				mCoverPath = null;
@@ -181,7 +181,7 @@ public class NowPlayingPollerThread extends Thread {
 	private boolean updateNowPlayingFanart(ICurrentlyPlaying currPlaying) {
 		try {
 			String downloadURI = currPlaying.getFanart();
-			if (downloadURI == null || downloadURI.length() == 0) {
+			if (downloadURI == null || downloadURI.length() == 0 || HostFactory.host == null) {
 				mFanart = null;
 				String oldFanartPath = mFanartPath;
 				mFanartPath = null;
