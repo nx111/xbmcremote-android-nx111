@@ -334,7 +334,7 @@ public class ConnectionService extends IntentService {
 		final HashMap<String, JsonHandler> handlers = mHandlers;
 		
 		// check for errors
-		if (node.has("error")) {
+		if (node.has("error") && node.get("id") != null) {
 			notifyError(new ApiException(node), node.get("id").getValueAsText());
 			
 		// check if notification or api call
