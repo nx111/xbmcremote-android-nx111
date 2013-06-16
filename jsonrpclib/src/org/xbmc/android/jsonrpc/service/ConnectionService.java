@@ -204,7 +204,7 @@ public class ConnectionService extends IntentService {
 			return;
 		} catch (IOException e) {
 			Log.e(TAG, "I/O error while opening: " + e.getMessage(), e);
-			notifyError(new ApiException(ApiException.IO_EXCEPTION_WHILE_OPENING,  "I/O error while opening: " + e.getMessage(), e), null);
+			//notifyError(new ApiException(ApiException.IO_EXCEPTION_WHILE_OPENING,  "I/O error while opening: " + e.getMessage(), e), null);
 			stopSelf();
 			return;
 		}
@@ -249,7 +249,7 @@ public class ConnectionService extends IntentService {
 			notifyError(new ApiException(ApiException.IO_DISCONNECTED,  "Socket disconnected: " + e.getMessage(), e), null);
 		} catch (IOException e) {
 			Log.e(TAG, "I/O error while reading (" + e.getClass().getSimpleName() + "): " + e.getMessage(), e);
-			notifyError(new ApiException(ApiException.IO_EXCEPTION_WHILE_READING,  "I/O error while reading: " + e.getMessage(), e), null);
+			//notifyError(new ApiException(ApiException.IO_EXCEPTION_WHILE_READING,  "I/O error while reading: " + e.getMessage(), e), null);
 		} finally {
 			try {
 				if (socket != null) {

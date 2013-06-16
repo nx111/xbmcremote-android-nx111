@@ -3,6 +3,7 @@
 	<name>xbmc-jsonrpclib-android</name>
 	<comment></comment>
 	<projects>
+		<project>XBMC Remote</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
